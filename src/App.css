@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'RobotoItalic';
+  src: url('./fonts/Roboto-Italic.ttf');
+}
+
+*{
+  font-family: 'RobotoItalic', sans-serif;
+}
+
+body{
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: -webkit-linear-gradient(to right, #2193b0, #6dd5ed);
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+}
+
+.box{
+  width: 235px;
+  height: 320px;
+  border: 1px solid red;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
