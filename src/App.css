@@ -22,10 +22,14 @@ body{
   background: linear-gradient(to right, #2193b0, #6dd5ed);
 }
 
+button{
+  background-color: #f1faee;
+}
+
 .box{
   width: 235px;
   height: 320px;
-  border: 1px solid red;
+  border: 0;
   overflow: hidden;
 
   display: grid;
