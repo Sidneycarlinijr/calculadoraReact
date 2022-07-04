@@ -3,35 +3,59 @@ import Button from './Button'
 import Display from './Display'
 
 export default function Calculator() {
-
     var [num, setNum] = useState(0)
+    var [oldNum, setOldNum] = useState(0)
+    var [operator, setOperator] = useState('')
 
-    function calc(e){
-        console.log(e)
-        setNum(num + e)
+    function display(e) {
+        num === 0 ? setNum(e) : setNum(num + e);         //valida primeiro numero - se 0 substitui
     }
-    
+
+    function clear() {
+        setNum(0)
+        setOldNum(0)
+    }
+
+    function operatorHandler(e) {
+        setOperator(e)
+        setOldNum(num)
+        setNum(0)
+    }
+
+    function calc() {
+        switch (operator) {
+            case '/': (setNum(parseFloat(oldNum) / parseFloat(num)))
+                break;
+            case '*': (setNum(parseFloat(oldNum) * parseFloat(num)))
+                break;
+            case '-': (setNum(parseFloat(oldNum) - parseFloat(num)))
+                break;
+            case '+': (setNum(parseFloat(oldNum) + parseFloat(num)))
+                break;
+        }
+    }
+
     return (
         <div className="box rounded">
             <Display num={num}></Display>
 
-            <Button click={calc} bgColor="blue-100">CE</Button>
-            <Button click={calc}  >/</Button>
-            <Button click={calc}  >*</Button>
-            <Button click={calc}  >-</Button>
-            <Button click={calc} >7</Button>
-            <Button click={calc} >8</Button>
-            <Button click={calc} >9</Button>
-            <Button click={calc} row='2'>+</Button>
-            <Button click={calc} >4</Button>
-            <Button click={calc} >5</Button>
-            <Button click={calc} >6</Button>
-            <Button click={calc} >1</Button>
-            <Button click={calc} >2</Button>
-            <Button click={calc} >3</Button>
+            <Button click={clear} bgColor="blue-100">C</Button>
+            <Button click={operatorHandler}  >/</Button>
+            <Button click={operatorHandler}  >*</Button>
+            <Button click={operatorHandler}  >-</Button>
+            <Button click={display} >7</Button>
+            <Button click={display} >8</Button>
+            <Button click={display} >9</Button>
+            <Button click={operatorHandler} row='2'>+</Button>
+            <Button click={display} >4</Button>
+            <Button click={display} >5</Button>
+            <Button click={display} >6</Button>
+            <Button click={display} >1</Button>
+            <Button click={display} >2</Button>
+            <Button click={display} >3</Button>
             <Button click={calc} bgColor='blue-100' row='2'>=</Button>
-            <Button click={calc} span='2'>0</Button>
-            <Button click={calc} >,</Button>
+            <Button click={display} span='2'>0</Button>
+            <Button click={display} >,</Button>
         </div>
     )
 }
