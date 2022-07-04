@@ -4,7 +4,6 @@ import Display from './Display'
 
 export default function Calculator() {
 
-
     return (
         <div className="box rounded">
             <Display></Display>
