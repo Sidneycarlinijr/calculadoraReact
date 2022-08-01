@@ -23,14 +23,15 @@ export default function Calculator() {
     }
 
     function calc() {
+        var dividir = 0
         switch (operator) {
-            case '/': (setNum(parseFloat(oldNum) / parseFloat(num)))
+            case '/': (setNum ((parseFloat(oldNum) / parseFloat(num)).toFixed(10)))
                 break;
-            case '*': (setNum(parseFloat(oldNum) * parseFloat(num)))
+            case '*': (setNum ((parseFloat(oldNum) * parseFloat(num)).toFixed(10)))
                 break;
-            case '-': (setNum(parseFloat(oldNum) - parseFloat(num)))
+            case '-': (setNum ((parseFloat(oldNum) - parseFloat(num)).toFixed(10)))
                 break;
-            case '+': (setNum(parseFloat(oldNum) + parseFloat(num)))
+            case '+': (setNum ((parseFloat(oldNum) + parseFloat(num)).toFixed(10)))
                 break;
         }
     }
@@ -55,7 +56,7 @@ export default function Calculator() {
             <Button click={display} >3</Button>
             <Button click={calc} bgColor='blue-100' row='2'>=</Button>
             <Button click={display} span='2'>0</Button>
-            <Button click={display} >,</Button>
+            <Button click={display} >.</Button>
         </div>
     )
 }
