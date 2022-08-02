@@ -40,21 +40,21 @@ export default function Calculator() {
         <div className="box rounded">
             <Display num={num}></Display>
 
-            <Button click={clear} bgColor="blue-100">C</Button>
-            <Button click={operatorHandler}  >/</Button>
-            <Button click={operatorHandler}  >*</Button>
-            <Button click={operatorHandler}  >-</Button>
+            <Button click={clear} bgColor>C</Button>
+            <Button click={operatorHandler} >/</Button>
+            <Button click={operatorHandler} >*</Button>
+            <Button click={operatorHandler} >-</Button>
             <Button click={display} >7</Button>
             <Button click={display} >8</Button>
             <Button click={display} >9</Button>
-            <Button click={operatorHandler} row='2'>+</Button>
+            <Button click={operatorHandler} bgColor row='2'>+</Button>
             <Button click={display} >4</Button>
             <Button click={display} >5</Button>
             <Button click={display} >6</Button>
             <Button click={display} >1</Button>
             <Button click={display} >2</Button>
             <Button click={display} >3</Button>
-            <Button click={calc} bgColor='blue-100' row='2'>=</Button>
+            <Button click={calc} bgColor row='2'>=</Button>
             <Button click={display} span='2'>0</Button>
             <Button click={display} >.</Button>
         </div>
